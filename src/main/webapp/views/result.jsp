@@ -11,6 +11,7 @@
 
 <p>The implied probability is: ${calculator}%</p>
 <p>The accurate odds is: ${calculator2}</p>
+<p>Reversed odds is: ${calculator3}</p>
 
 </body>
 </html>

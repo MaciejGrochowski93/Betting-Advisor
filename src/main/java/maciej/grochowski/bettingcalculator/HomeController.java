@@ -15,16 +15,10 @@ public class HomeController {
         return "index";
     }
 
-//    @RequestMapping("calculate")
-//    public String calculate(@RequestParam("userOdds") double userOdds, Model m) {
-//        String impProbability = String.valueOf(calculator.calculateProbability(userOdds));
-//        m.addAttribute("impProbability", impProbability);
-//        return "result";
-//    }
 
+    Calculator calc = new Calculator();
     @RequestMapping("calculateProb")
     public String calculateProb(@RequestParam("userInputOdds") double userInputOdds, Model m) {
-        Calculator calc = new Calculator();
         try {
             m.addAttribute("calculator", calc.calculateProbability(userInputOdds));
         } catch(IncorrectArgument e){
@@ -35,9 +29,17 @@ public class HomeController {
 
     @RequestMapping("calculateOdds")
     public String calculateOdds(@RequestParam("userInputPercent") double userInputPercent, Model m){
-        Calculator calc = new Calculator();
-        calc.calculateOdds(userInputPercent);
+        try{
         m.addAttribute("calculator2", calc.calculateOdds(userInputPercent));
+        } catch(IncorrectArgument e){
+            System.err.println("Please, insert number between 1 and 100");
+        }
+        return "result";
+    }
+
+    @RequestMapping("reverseOdds")
+    public String reverseOdds(@RequestParam("userInputReverse") double userInputReverse, Model m){
+        m.addAttribute("calculator3", calc.reverseOdds(userInputReverse));
         return "result";
     }
 }
