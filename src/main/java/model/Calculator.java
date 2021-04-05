@@ -2,8 +2,6 @@ package model;
 
 import org.apache.commons.math3.util.Precision;
 
-import java.math.BigDecimal;
-
 public class Calculator {
     private double userInput;
     private double tmpResult;
@@ -16,23 +14,31 @@ public class Calculator {
         this.userInput = userInput;
     }
 
-    public double calculateProbability(double odds) throws IncorrectArgument {
-            if (odds > 1 && odds < 1000) {
-                tmpResult = 100 / odds;
-                result = Precision.round(tmpResult, 2);
-            }
-            else
-                throw new IncorrectArgument();
+    public double calculateProbability(double actualOdds) throws IncorrectArgument {
+        if (actualOdds > 1 && actualOdds < 1000) {
+            result = roundTwoDigits(tmpResult = 100 / actualOdds);
+        } else
+            throw new IncorrectArgument();
 
         return result;
     }
 
-    public double calculateOdds(double userInputPercent) {
-        if (userInputPercent > 1 && userInputPercent < 99) {
-            tmpResult = 100 / userInputPercent;
-            result = Precision.round(tmpResult, 2);
+    public double calculateOdds(double usersPercent) throws IncorrectArgument {
+        if (usersPercent > 1 && usersPercent < 99) {
+            result = roundTwoDigits(tmpResult = 100 / usersPercent);
+        } else
+            throw new IncorrectArgument();
+        return result;
+    }
+
+    public double reverseOdds(double bookmakerOdds) {
+        if (bookmakerOdds > 1 && bookmakerOdds < 1000) {
+            result = roundTwoDigits((1 / (bookmakerOdds - 1)) + 1);
         }
         return result;
     }
 
+    public double roundTwoDigits(double odds) {
+        return Precision.round(odds, 2);
+    }
 }

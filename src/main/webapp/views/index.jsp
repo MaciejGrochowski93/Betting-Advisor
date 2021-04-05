@@ -5,21 +5,47 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Betting calculator</title>
-<link rel="stylesheet" href="views/style.css">
+<link rel="stylesheet" href=" style.css">
 </head>
 <body>
 
-<h2>Hello gdfgsdfgdfsgdsfg</h2>
-<form action = "calculateProb">
-    <p>Enter the odds you consider betting:</p>
-    <input type = "text" name = "userInputOdds"></br>
-    <input type = "submit">
-</form>
-<form action = "calculateOdds">
-    <p>Enter your percentage probability here (just number, in example 50):</p>
-    <input type = "text" name = "userInputPercent"></br>
-    <input type = "submit">
-</form>
+<header>Hello</header>
+<nav>
+    <ul>
+        <li><a href="">Calculate probability</a></li>
+        <li><a href="">Calculate odds</a></li>
+        <li><a href="">Reverse odds</a></li>
+        <li><a href="">Surebet calculator</a></li>
+        <li><a href="">Freebet calculator</a></li>
+    </ul>
+</nav>
+<main>
+    <ul>
+        <li>
+            <form action = "calculateProb">
+            <p>Enter the odds you consider betting:</p>
+            <input type = "text" name = "userInputOdds"></br>
+            <input type = "submit">
+            </form>
+        </li>
+        <li>
+            <form action = "calculateOdds">
+                <p>Enter your percentage probability here (just number, in example 50):</p>
+                <input type = "text" name = "userInputPercent"></br>
+                <input type = "submit">
+            </form>
+        </li>
+        <li>
+            <form action = "reverseOdds">
+                <p>Enter the odds you want to bet, and find out what odds you let bookmaker take against you:</p>
+                <input type = "text" name = "userInputReverse"></br>
+                <input type = "submit">
+            </form>
+        </li>
+    </ul>
+</main>
+<footer></footer>
+
 
 </body>
 </html>
