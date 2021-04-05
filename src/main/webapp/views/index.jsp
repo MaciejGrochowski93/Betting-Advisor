@@ -5,11 +5,19 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Betting calculator</title>
-<link rel="stylesheet" href=" style.css">
+<link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-
-<header>Hello</header>
+<header>
+    <div class="header-image">
+        <div class="header-text">
+            <h1>Betting Advisor</h1>
+            <p>Gain the advantage</p>
+        </div>
+        <div class="header-bg">
+        </div>
+    </div>
+</header>
 <nav>
     <ul>
         <li><a href="">Calculate probability</a></li>
