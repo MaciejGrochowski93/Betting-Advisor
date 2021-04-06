@@ -16,7 +16,7 @@ nav li{
 }
 
 nav li a{
-    color: rgb(224, 238, 99);
+    color: white;
     padding: 10px 30px;
     text-decoration: none;
     text-shadow:black 1px 1px 1px;
@@ -26,7 +26,7 @@ nav li a{
 }
 
 nav li a:hover{
-    color: rgb(101, 204, 235);
+    color: rgb(224, 238, 99);
 }
 
 .header-text{
@@ -54,5 +54,25 @@ nav li a:hover{
 header {
     text-transform: uppercase;
     text-shadow: black 3px 3px 3px;
-    text-
+}
+
+footer{
+    font-size: 20px;
+    height: 80px;
+    line-height: 40px;
+    margin-bottom: 20px;
+    background-color: rgba(0, 0, 0, 0.397);
+    color: white;
+    text-align: center;
+    text-shadow:black 1px 1px 1px;
+}
+
+.foot-icon{
+    margin-left: 50px;
+    padding-left: 10px;
+}
+
+.foot-icon :hover{
+    color: rgb(224, 238, 99);
+    transition: 500ms;
 }
