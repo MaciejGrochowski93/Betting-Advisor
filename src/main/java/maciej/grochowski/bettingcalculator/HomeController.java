@@ -10,22 +10,26 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class HomeController {
 
+    Calculator calc = new Calculator();
+
     @RequestMapping("/")
     public String home() {
         return "index";
     }
 
-
-    Calculator calc = new Calculator();
-
     @RequestMapping("calculateProb")
-    public String calculateProb(@RequestParam("userInputOdds") double userInputOdds, Model m) {
+    public String calculateProb() {
+        return "resultOdds";
+    }
+
+    @RequestMapping("calculateProb/userInputOdds/{userInputOdds}")
+    public String calculateProb2(@RequestParam("userInputOdds") double userInputOdds, Model m) {
         try {
             m.addAttribute("calculator", calc.calculateProbability(userInputOdds));
         } catch (IncorrectArgument e) {
             System.err.println("Please, insert number between 1 and 1000");
         }
-        return "resultProb";
+        return "resultOdds2";
     }
 
     @RequestMapping("calculateOdds")
@@ -35,7 +39,7 @@ public class HomeController {
         } catch (IncorrectArgument e) {
             System.err.println("Please, insert number between 1 and 100");
         }
-        return "resultOdds";
+        return "resultProb";
     }
 
     @RequestMapping("reverseOdds")
@@ -50,7 +54,7 @@ public class HomeController {
 
     @RequestMapping("calculateSurebet")
     public String calculateSurebet(@RequestParam("money") double money, @RequestParam("userInputSurebet1") double userInputSurebet1,
-                                    @RequestParam("userInputSurebet2") double userInputSurebet2, Model m) {
+                                   @RequestParam("userInputSurebet2") double userInputSurebet2, Model m) {
         m.addAttribute("calculator4", calc.calculateSurebet(money, userInputSurebet1, userInputSurebet2));
         return "resultSurebet";
     }
