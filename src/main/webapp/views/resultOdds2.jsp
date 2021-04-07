@@ -18,7 +18,8 @@
                         <input type = "text" name = "userInputOdds"></br>
                         <input type = "submit">
                         </form>
-
+        <p>The implied probability is: ${calculator}%</p>
+        <p>If you think your favorite has got more chances to win, perhaps it could be a correct bet.</p>
         </main>
         <div w3-include-html="footer.html"></div>
             <script src="js/script.js"></script>
