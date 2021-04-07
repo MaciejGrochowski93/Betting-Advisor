@@ -25,7 +25,7 @@ public class HomeController {
         } catch (IncorrectArgument e) {
             System.err.println("Please, insert number between 1 and 1000");
         }
-        return "result";
+        return "resultProb";
     }
 
     @RequestMapping("calculateOdds")
@@ -35,7 +35,7 @@ public class HomeController {
         } catch (IncorrectArgument e) {
             System.err.println("Please, insert number between 1 and 100");
         }
-        return "result";
+        return "resultOdds";
     }
 
     @RequestMapping("reverseOdds")
@@ -45,13 +45,13 @@ public class HomeController {
         } catch (IncorrectArgument e) {
             System.err.println("Please, insert number between 1 and 100");
         }
-        return "result";
+        return "resultReverse";
     }
 
     @RequestMapping("calculateSurebet")
     public String calculateSurebet(@RequestParam("money") double money, @RequestParam("userInputSurebet1") double userInputSurebet1,
                                     @RequestParam("userInputSurebet2") double userInputSurebet2, Model m) {
         m.addAttribute("calculator4", calc.calculateSurebet(money, userInputSurebet1, userInputSurebet2));
-        return "result";
+        return "resultSurebet";
     }
 }
