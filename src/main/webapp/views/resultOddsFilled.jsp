@@ -13,12 +13,13 @@
     <div w3-include-html="header.html"></div>
     <div w3-include-html="nav.html"></div>
     <main>
-                        <form action = "calculateProb2">
+                        <form action = "calculateProbResult">
                         <p>Enter the odds you consider betting:</p>
-                        <input type = "text" name = "userInputOdds"></br>
+                        <input type = "text" name = "userInputOdds2"></br>
                         <input type = "submit">
                         </form>
-
+        <p>The implied probability is: ${calculator}%</p>
+        <p>If you think your favorite has got more chances to win, perhaps it could be a correct bet?</p>
         </main>
         <div w3-include-html="footer.html"></div>
             <script src="js/script.js"></script>

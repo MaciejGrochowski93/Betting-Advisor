@@ -13,7 +13,7 @@
     <div w3-include-html="header.html"></div>
     <div w3-include-html="nav.html"></div>
     <main>
-                        <form action = "calculateSurebet">
+                        <form action = "calculateSurebetResult">
                             <p>Enter the amount of money you want to risk:</p>
                             <input type = "text" name = "money"></br>
                             <p>Enter the odds of the first outcome:</p>
