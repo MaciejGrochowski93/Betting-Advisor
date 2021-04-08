@@ -14,9 +14,9 @@
     <div w3-include-html="nav.html"></div>
     <main>
                         <form action = "calculateProbResult">
-                        <p>Enter the odds you consider betting:</p>
+                        <h4>Enter the odds you consider betting:</h4><br>
                         <input type = "text" name = "userInputOdds2"></br>
-                        <input type = "submit">
+                        <input type = "submit"><br><br>
                         </form>
 
         </main>

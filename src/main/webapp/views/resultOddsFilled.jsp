@@ -14,9 +14,9 @@
     <div w3-include-html="nav.html"></div>
     <main>
                         <form action = "calculateProbResult">
-                        <p>Enter the odds you consider betting:</p>
-                        <input type = "text" name = "userInputOdds2"></br>
-                        <input type = "submit">
+                        <h4>Enter the odds you consider betting:</h4><br>
+                        <input type = "text" name = "userInputOdds2"><br>
+                        <input type = "submit"><br><br>
                         </form>
         <p>The implied probability is: ${calculator}%</p>
         <p>If you think your favorite has got more chances to win, perhaps it could be a correct bet?</p>

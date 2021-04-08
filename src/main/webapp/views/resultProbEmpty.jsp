@@ -14,9 +14,9 @@
     <div w3-include-html="nav.html"></div>
     <main>
                     <form action = "calculateOddsResult">
-                        <p>Enter your percentage probability here (just number, in example 50):</p>
-                        <input type = "text" name = "userInputPercent"></br>
-                        <input type = "submit">
+                        <h4>Enter your percentage probability here (just number, in example 50):</h4><br>
+                        <input type = "text" name = "userInputPercent"><br>
+                        <input type = "submit"><br><br>
                     </form>
 
     </main>

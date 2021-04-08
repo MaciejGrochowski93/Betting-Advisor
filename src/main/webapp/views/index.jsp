@@ -13,7 +13,7 @@
     <div w3-include-html="header.html"></div>
     <div w3-include-html="nav.html"></div>
     <main>
-        <h2>What is the Betting Advisor?</h2> 
+        <h2>What is the Betting Advisor?</h2>
             <section>
             <p>In order to achieve success you need to catch every single opportunity that gives you advantage.</p>
             <p> After watching sports and betting industry for many years, I came to the conclusion: betting is nothing else than mathemetical calculation.
@@ -45,40 +45,6 @@
             </p>
             <p>The Surebet Calculator will check if you can potentially take a risk-free bet out of the given odds, and tell you how to spread the money you want to place.</p>
             </section>
-            <ul>
-                <li>
-                    <form action = "calculateProb">
-                    <p>Enter the odds you consider betting:</p>
-                    <input type = "text" name = "userInputOdds"></br>
-                    <input type = "submit">
-                    </form>
-                </li>
-                <li>
-                    <form action = "calculateOdds">
-                        <p>Enter your percentage probability here (just number, in example 50):</p>
-                        <input type = "text" name = "userInputPercent"></br>
-                        <input type = "submit">
-                    </form>
-                </li>
-                <li>
-                    <form action = "reverseOdds">
-                        <p>Enter the odds you want to bet, and find out what odds you let bookmaker take against you:</p>
-                        <input type = "text" name = "userInputReverse"></br>
-                        <input type = "submit">
-                    </form>
-                </li>
-                <li>
-                    <form action = "calculateSurebet">
-                        <p>Enter the amount of money you want to risk:</p>
-                        <input type = "text" name = "money"></br>
-                        <p>Enter the odds of the first outcome:</p>
-                        <input type = "text" name = "userInputSurebet1"></br>
-                        <p>Enter the odds of the second outcome:</p>
-                        <input type = "text" name = "userInputSurebet2"></br>
-                        <input type = "submit">
-                    </form>
-                </li>
-            </ul>
         </main>
         <div w3-include-html="footer.html"></div>
             <script src="js/script.js"></script>

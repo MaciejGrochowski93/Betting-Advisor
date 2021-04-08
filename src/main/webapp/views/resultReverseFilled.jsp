@@ -14,9 +14,9 @@
     <div w3-include-html="nav.html"></div>
     <main>
                     <form action = "reverseOddsResult">
-                        <p>Enter the odds you want to bet, and find out what odds you let bookmaker take against you:</p>
-                        <input type = "text" name = "userInputReverse"></br>
-                        <input type = "submit">
+                        <h4>Enter the odds you want to bet, and find out what odds you let bookmaker take against you:</h4><br>
+                        <input type = "text" name = "userInputReverse"><br>
+                        <input type = "submit"><br><br>
                     </form>
         <p>The reversed odds equal to: ${calculator3}</p>
         <p>Bascially, you consider letting a bookmaker to take a bet at these odds against yourself.</p>
