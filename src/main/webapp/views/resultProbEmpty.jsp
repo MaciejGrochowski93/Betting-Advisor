@@ -13,13 +13,12 @@
     <div w3-include-html="header.html"></div>
     <div w3-include-html="nav.html"></div>
     <main>
-                    <form action = "reverseOdds">
-                        <p>Enter the odds you want to bet, and find out what odds you let bookmaker take against you:</p>
-                        <input type = "text" name = "userInputReverse"></br>
+                    <form action = "calculateOddsResult">
+                        <p>Enter your percentage probability here (just number, in example 50):</p>
+                        <input type = "text" name = "userInputPercent"></br>
                         <input type = "submit">
                     </form>
-        <p>The reversed odds equal to: ${calculator3}</p>
-        <p>Bascially, you consider letting a bookmaker to take a bet at these odds against yourself.</p>
+
     </main>
     <div w3-include-html="footer.html"></div>
    <script src="js/script.js"></script>

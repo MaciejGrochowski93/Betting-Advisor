@@ -13,12 +13,11 @@
     <div w3-include-html="header.html"></div>
     <div w3-include-html="nav.html"></div>
     <main>
-                    <form action = "calculateOdds">
+                    <form action = "calculateOddsResult">
                         <p>Enter your percentage probability here (just number, in example 50):</p>
                         <input type = "text" name = "userInputPercent"></br>
                         <input type = "submit">
                     </form>
-
         <p>The accurate odds is: ${calculator2}</p>
         <p>These odds are equal to the probability given by you.</p>
     </main>
