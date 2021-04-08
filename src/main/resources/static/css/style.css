@@ -67,7 +67,8 @@ nav li a:hover{
 
 main {
     text-align: justify;
-    width: 60%;
+    min-height: 60vh;
+    width: 50%;
     margin: 30px auto;
 }
 
