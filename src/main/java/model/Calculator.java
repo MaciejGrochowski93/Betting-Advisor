@@ -19,7 +19,6 @@ public class Calculator {
             result = roundTwoDigits(tmpResult = 100 / actualOdds);
         } else
             throw new IncorrectArgument();
-
         return result;
     }
 
@@ -40,14 +39,19 @@ public class Calculator {
     }
 
     public String calculateSurebet(double money, double odds1, double odds2) {
-        double multiplier = calculateSurebetMultiplier(odds1, odds2);
-        double moneyToBetOnOdds1 = (money * multiplier) / odds1;
-        double moneyToBetOnOdds2 = (money * multiplier) / odds2;
-        return ("In order to create a " + roundTwoDigits(multiplier * 100) + "% surebet from odds: " + odds1 + ", " + odds2 + " and total money of "
-                + money + ", you should bet " + roundTwoDigits(moneyToBetOnOdds1) + " at odds " + odds1 + ", and " + roundTwoDigits(moneyToBetOnOdds2) +
-                " at odds " + odds2 + ". Your return should equal: " + roundTwoDigits(money * multiplier) + ", with the gross profit of "
-                + roundTwoDigits(money * (multiplier - 1)) + "."
-        );
+        String message = "";
+        if (isSurebet(odds1, odds2)) {
+            double multiplier = calculateSurebetMultiplier(odds1, odds2);
+            double moneyToBetOnOdds1 = (money * multiplier) / odds1;
+            double moneyToBetOnOdds2 = (money * multiplier) / odds2;
+            message = "In order to create a " + roundTwoDigits(multiplier * 100) + "% surebet from odds: " + odds1 + ", " + odds2 + ", and total money of "
+                    + money + ", you should bet " + roundTwoDigits(moneyToBetOnOdds1) + " at odds " + odds1 + ", and " + roundTwoDigits(moneyToBetOnOdds2) +
+                    " at odds " + odds2 + ". Your return should equal: " + roundTwoDigits(money * multiplier) + ", with the gross profit of "
+                    + roundTwoDigits(money * (multiplier - 1)) + ".";
+        } else {
+            message = "There is no surebet from odds " + odds1 + ", and " + odds2;
+        }
+        return message;
     }
 
     public double calculateSurebetMultiplier(double odds1, double odds2) {
@@ -57,18 +61,18 @@ public class Calculator {
         return result;
     }
 
+    public boolean isOddsCorrect(double odds) {
+        if (odds > 1 && odds < 1000)
+            return true;
+        return false;
+    }
+
     public boolean isSurebet(double odds1, double odds2) {
         if (isOddsCorrect(odds1) && isOddsCorrect(odds2)) {
             if ((odds1 - 1) * (odds2 - 1) > 1) {
                 return true;
             }
         }
-        return false;
-    }
-
-    public boolean isOddsCorrect(double odds) {
-        if (odds > 1 && odds < 1000)
-            return true;
         return false;
     }
 
