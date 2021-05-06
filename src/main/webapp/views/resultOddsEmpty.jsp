@@ -13,7 +13,7 @@
         <div w3-include-html="header.html"></div>
         <div w3-include-html="nav.html"></div>
     <main>
-            <form action = "calculateProbResult">
+            <form id = "odds" action = "calculateProbResult">
                 <h4>In this place you can calculate probability of success implied by bookmaker's odds.</h4>
                 <p>The larger the gap between where you estimate the probability, and the probability offered by the bookmaker, the better the bet is.</p> <br>
                 <p>Enter the odds you consider betting:</p>
