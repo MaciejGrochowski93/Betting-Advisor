@@ -4,6 +4,7 @@ import model.Calculator;
 import model.IncorrectArgument;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -71,7 +72,6 @@ public class HomeController {
     public String calculateSurebet(@RequestParam("money") double money, @RequestParam("userInputSurebet1") double userInputSurebet1,
                                    @RequestParam("userInputSurebet2") double userInputSurebet2, Model m) {
         m.addAttribute("calculator4", calc.calculateSurebet(money, userInputSurebet1, userInputSurebet2));
-        System.err.println("Please, insert number between 1 and 100");
         return "resultSurebetFilled";
     }
 }
