@@ -1,45 +1,46 @@
-package model;
+package maciej.grochowski.bettingcalculator.model;
 
 import org.apache.commons.math3.util.Precision;
 
 public class Calculator {
-    private double userInput;
     private double tmpResult;
     private double result;
+    private String message;
+    public static final String ANSI_RED = "\u001B[31m";
 
     public Calculator() {
     }
 
-    public Calculator(double userInput) {
-        this.userInput = userInput;
-    }
-
-    public double calculateProbability(double actualOdds) throws IncorrectArgument {
-        if (isOddsCorrect(actualOdds)) {
+    public String calculateProbability(double actualOdds) {
+//        if (isOddsCorrect(actualOdds))
+        {
             result = roundTwoDigits(tmpResult = 100 / actualOdds);
-        } else
-            throw new IncorrectArgument();
-        return result;
+            message = String.valueOf(result);
+        }
+        return message;
     }
 
-    public double calculateOdds(double usersPercent) throws IncorrectArgument {
-        if (usersPercent > 1 && usersPercent < 99) {
+    public String calculateOdds(double usersPercent) {
+//        if (usersPercent > 1 && usersPercent < 99) {
             result = roundTwoDigits(tmpResult = 100 / usersPercent);
-        } else
-            throw new IncorrectArgument();
-        return result;
+            message = String.valueOf(result);
+//        }
+        return message;
     }
 
-    public double reverseOdds(double bookmakerOdds) throws IncorrectArgument {
-        if (isOddsCorrect(bookmakerOdds)) {
+    public String reverseOdds(double bookmakerOdds) {
+//        if (isOddsCorrect(bookmakerOdds))
+        {
             result = roundTwoDigits((1 / (bookmakerOdds - 1)) + 1);
-        } else
-            throw new IncorrectArgument();
-        return result;
+            message = String.valueOf(result);
+        }
+//        else
+//            message = "Please, insert number between 1.001 and 1000.";
+        return message;
     }
 
     public String calculateSurebet(double money, double odds1, double odds2) {
-        String message = "";
+//        String message;
         if (isSurebet(odds1, odds2)) {
             double multiplier = calculateSurebetMultiplier(odds1, odds2);
             double moneyToBetOnOdds1 = (money * multiplier) / odds1;
@@ -49,26 +50,29 @@ public class Calculator {
                     " at odds " + odds2 + ". Your return should equal: " + roundTwoDigits(money * multiplier) + ", with the gross profit of "
                     + roundTwoDigits(money * (multiplier - 1)) + ".";
         } else {
-            message = "There is no surebet from odds " + odds1 + ", and " + odds2;
+            message = "There is no surebet from odds " + odds1 + ", and " + odds2 + ".";
         }
         return message;
     }
 
     public double calculateSurebetMultiplier(double odds1, double odds2) {
-        if (isOddsCorrect(odds1) && isOddsCorrect(odds2) && isSurebet(odds1, odds2)) {
+        if (
+//                isOddsCorrect(odds1) && isOddsCorrect(odds2) &&
+                        isSurebet(odds1, odds2)) {
             result = (odds1 * odds2) / (odds1 + odds2);
         }
         return result;
     }
 
-    public boolean isOddsCorrect(double odds) {
-        if (odds > 1 && odds < 1000)
-            return true;
-        return false;
-    }
+//    public boolean isOddsCorrect(double odds) {
+//        if (odds > 1 && odds < 1000)
+//            return true;
+//        return false;
+//    }
 
     public boolean isSurebet(double odds1, double odds2) {
-        if (isOddsCorrect(odds1) && isOddsCorrect(odds2)) {
+//        if (isOddsCorrect(odds1) && isOddsCorrect(odds2))
+        {
             if ((odds1 - 1) * (odds2 - 1) > 1) {
                 return true;
             }

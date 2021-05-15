@@ -18,18 +18,18 @@
                 <p>Most bookies offer similar odds on the same outcome, and their margin prevents players from taking the arbitrage bets.</p>
                 <p>Luckily for us, sometimes rapid line movements allow players to take the advantage of it</p><br>
                 <p>Enter the amount of money you want to risk:</p>
-                <input type = "number" name = "money" min = "1.01" max = "1000" step = "0.001" required></br><br>
+                <input type = "number" class = "numberMoney" name = "money" min = "1" max = "100000" step = "0.1" required></br><br>
                 <p>Enter the odds of the first outcome:</p>
-                <input type = "number" name = "userInputSurebet1" min = "1.01" max = "1000" step = "0.001" required></br><br>
+                <input type = "number" class = "numberProb" name = "userInputSurebet1" min = "1.01" max = "1000" step = "0.01" required></br><br>
                 <p>Enter the odds of the second outcome:</p>
-                <input type = "number" name = "userInputSurebet2" min = "1.01" max = "1000" step = "0.001" required></br>
+                <input type = "number" class = "numberProb" name = "userInputSurebet2" min = "1.01" max = "1000" step = "0.01" required></br>
                 <button>Calculate</button><br><br>
-        <p>${calculator4}</p>
+                <p>${calculator4}</p>
             </form>
     </main>
-        <div w3-include-html="nav.html"></div>
         <div w3-include-html="footer.html"></div>
         <script src="js/script.js"></script>
-        <script>includeHTML();</script>
+        <script src="js/scriptMoney.js"></script>
+         <script>includeHTML();</script>
 </body>
 </html>

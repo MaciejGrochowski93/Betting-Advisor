@@ -1,17 +1,14 @@
-package maciej.grochowski.bettingcalculator;
+package maciej.grochowski.bettingcalculator.model;
 
-import model.Calculator;
-import model.IncorrectArgument;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class HomeController {
 
-    Calculator calc = new Calculator();
+    private Calculator calc = new Calculator();
 
     @RequestMapping("/")
     public String home() {
@@ -20,32 +17,24 @@ public class HomeController {
 
     @RequestMapping("/calculateProb")
     public String calculateProb() {
-        return "resultOddsEmpty";
+        return "resultProbEmpty";
     }
 
     @RequestMapping("/calculateProbResult")
-    public String calculateProbResult(@RequestParam("userInputOdds2") double userInputOdds2, Model m) {
-        try {
-            m.addAttribute("calculator", calc.calculateProbability(userInputOdds2));
-        } catch (IncorrectArgument e) {
-            System.err.println("Please, insert number between 1 and 1000");
-        }
-        return "resultOddsFilled";
+    public String calculateProbResult(@RequestParam("userInputOdds") double userInputOdds, Model m) {
+        m.addAttribute("calculator", calc.calculateProbability(userInputOdds));
+        return "resultProbFilled";
     }
 
     @RequestMapping("/calculateOdds")
     public String calculateOdds() {
-        return "resultProbEmpty";
+        return "resultOddsEmpty";
     }
 
     @RequestMapping("/calculateOddsResult")
     public String calculateOddsResult(@RequestParam("userInputPercent") double userInputPercent, Model m) {
-        try {
-            m.addAttribute("calculator2", calc.calculateOdds(userInputPercent));
-        } catch (IncorrectArgument e) {
-            System.err.println("Please, insert number between 1 and 100");
-        }
-        return "resultProbFilled";
+        m.addAttribute("calculator2", calc.calculateOdds(userInputPercent));
+        return "resultOddsFilled";
     }
 
     @RequestMapping("/reverseOdds")
@@ -55,11 +44,7 @@ public class HomeController {
 
     @RequestMapping("/reverseOddsResult")
     public String reverseOddsResult(@RequestParam("userInputReverse") double userInputReverse, Model m) {
-        try {
-            m.addAttribute("calculator3", calc.reverseOdds(userInputReverse));
-        } catch (IncorrectArgument e) {
-            System.err.println("Please, insert number between 1 and 100");
-        }
+        m.addAttribute("calculator3", calc.reverseOdds(userInputReverse));
         return "resultReverseFilled";
     }
 
