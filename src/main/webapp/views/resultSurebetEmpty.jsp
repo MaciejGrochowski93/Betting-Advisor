@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="ISO-8859-1">
     <title>Betting calculator</title>
@@ -29,6 +29,7 @@
         <div w3-include-html="footer.html"></div>
         <script src="js/script.js"></script>
         <script src="js/scriptMoney.js"></script>
+        <script src="js/scriptProbabilityForm.js"></script>
         <script>includeHTML();</script>
 </body>
 </html>

@@ -9,6 +9,6 @@
                 } else if (e.target.value < 1.01) {
                     e.target.setCustomValidity("Please, insert a number between 1.01 and 1000.");
                 } else
-                    e.target.setCustomValidity("Please, insert a number between 1.01 and 1000.");
+                    e.target.setCustomValidity("The number you provide needs to have a maximum of 2 decimal places.");
             }
         };
