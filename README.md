@@ -4,9 +4,11 @@ By using this device, you can easily calculate the implied probability, convert 
 into betting odds & learn some fun stuff about betting.
 
 #Getting Started
+
 After downloading the project you simply have to run the BettingCalculatorApplication main(), and open the localhost.
 
 #How to use
+
 The navigation bar contains 5 links - the first one transfers to the homepage, 
 where the user could find some information about the site.
 
